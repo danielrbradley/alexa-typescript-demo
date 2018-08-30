@@ -1,0 +1,20 @@
+en-GB:
+  interactionModel:
+    languageModel:
+      invocationName: guessing game
+      intents:
+        - name: AMAZON.HelpIntent
+        - name: AMAZON.StopIntent
+        - name: GuessIntent
+          slots:
+            - name: Guess
+              type: AMAZON.NUMBER
+          samples:
+            - 'I guess {Guess}'
+            - 'is it {Guess}'
+            - 'what about {Guess}'
+            - 'my guess is {Guess}'
+            - 'if the number is {Guess}'
+            - '{Guess}'
+        - name: AMAZON.YesIntent
+        - name: AMAZON.NoIntent

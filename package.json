@@ -1,0 +1,25 @@
+{
+  "name": "alexa-ts-demo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Alexa Typescript Example",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ask-sdk": "^2.0.7",
+    "source-map-support": "^0.5.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "8.10.1",
+    "@types/node": "^8.0.57",
+    "serverless-alexa-skills": "https://github.com/danielrbradley/serverless-alexa-skills.git#3d83ed0",
+    "serverless-webpack": "^5.1.1",
+    "ts-loader": "^4.2.0",
+    "typescript": "^2.8.1",
+    "webpack": "^4.5.0"
+  },
+  "author": "Daniel Bradley",
+  "license": "MIT"
+}

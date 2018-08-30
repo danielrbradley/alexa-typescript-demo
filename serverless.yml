@@ -1,0 +1,34 @@
+service:
+  name: ts-demo
+
+plugins:
+  - serverless-webpack
+  - serverless-alexa-skills
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: eu-west-1
+
+functions:
+  alexa:
+    handler: handler.handler
+    events:
+      - alexaSkill: amzn1.ask.skill.xx-xx-xx-xx-xx
+
+custom:
+  alexa:
+    vendorId: XXXXXXXXXXXXXX # https://developer.amazon.com/mycid.html
+    skills:
+      - id: amzn1.ask.skill.xx-xx-xx-xx-xx
+        manifest:
+          publishingInformation:
+            locales:
+              en-GB:
+                name: Guessing Game
+          apis:
+            custom:
+              endpoint:
+                uri: TODO-FIND-AFTER-FIRST-DEPLOY # e.g. arn:aws:lambda:[region]:[account-id]:function:[function-name]
+          manifestVersion: '1.0'
+        models: ${file(models.yml)}
