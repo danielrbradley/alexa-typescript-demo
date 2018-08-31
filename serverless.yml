@@ -14,13 +14,13 @@ functions:
   alexa:
     handler: handler.handler
     events:
-      - alexaSkill: amzn1.ask.skill.xx-xx-xx-xx-xx
+      - alexaSkill: ${file(.secret.yml):skillId}
 
 custom:
   alexa:
-    vendorId: XXXXXXXXXXXXXX # https://developer.amazon.com/mycid.html
+    vendorId: ${file(.secret.yml):vendorId} # https://developer.amazon.com/mycid.html
     skills:
-      - id: amzn1.ask.skill.xx-xx-xx-xx-xx
+      - id: ${file(.secret.yml):skillId}
         manifest:
           publishingInformation:
             locales:
@@ -29,6 +29,6 @@ custom:
           apis:
             custom:
               endpoint:
-                uri: TODO-FIND-AFTER-FIRST-DEPLOY # e.g. arn:aws:lambda:[region]:[account-id]:function:[function-name]
+                uri: ${file(.secret.yml):lambdaArn} # e.g. arn:aws:lambda:[region]:[account-id]:function:[function-name]
           manifestVersion: '1.0'
         models: ${file(models.yml)}
